@@ -1,13 +1,17 @@
 <template>
-  <div>
-    <h4 class="display-1">Messages</h4>
+  <v-flex sm8 offset-sm2>
+    <v-card>
+      <v-toolbar dark>
+            <v-toolbar-title>Messages</v-toolbar-title>
+        </v-toolbar>
 
-    <v-list-item v-for="(message, index) in messages" :key="index" @click="true">
-      <v-list-item-content>
-        <v-list-item-title>{{ message }}</v-list-item-title>
-      </v-list-item-content>
-    </v-list-item>
-  </div>
+      <v-list-item v-for="(message, index) in messages" :key="index" @click="true">
+        <v-list-item-content>
+          <v-list-item-title>{{ message }}</v-list-item-title>
+        </v-list-item-content>
+      </v-list-item>
+    </v-card>
+  </v-flex>
 </template>
 
 <script>
