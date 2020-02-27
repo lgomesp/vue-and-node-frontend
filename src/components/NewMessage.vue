@@ -29,9 +29,18 @@ export default {
     };
   },
   methods: {
-    submit() {
-      axios.post("http://localhost:3000/messages", {message: this.messageBody})
-        console.log(this.messageBody);
+    async submit() {
+      try {
+        let msg = (
+          await axios.post("http://localhost:3000/messages", {
+            message: this.messageBody
+          })
+        ).data;
+        this.$root.$emit("newMessage", msg.message);
+        this.messageBody = "";
+      } catch (error) {
+        console.error(error);
+      }
     }
   }
 };
