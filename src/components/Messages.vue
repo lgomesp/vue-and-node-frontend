@@ -17,7 +17,7 @@ export default {
   name: "messages",
   data() {
     return {
-      // messages: ["hello", "hi"]
+      messages: ["hello", "hi"]
     };
   },
   async created() {
