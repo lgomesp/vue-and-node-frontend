@@ -20,6 +20,7 @@
 
 <script>
 import axios from "axios";
+import store from "../store.js";
 
 export default {
   name: "new-message",
@@ -36,7 +37,7 @@ export default {
             message: this.messageBody
           })
         ).data;
-        this.$root.$emit("newMessage", msg.message);
+        store.state.messages.push(msg.message);
         this.messageBody = "";
       } catch (error) {
         console.error(error);
