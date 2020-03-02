@@ -5,6 +5,7 @@ import store from './store.js'
 import vueRouter from 'vue-router'
 
 import Messages from './components/Messages'
+import NewMessage from './components/NewMessage'
 import VueRouter from 'vue-router'
 
 Vue.config.productionTip = false
@@ -12,10 +13,11 @@ Vue.config.productionTip = false
 Vue.use(vueRouter)
 
 const routes = [
-  { path: "/", component: Messages }
+  { path: "/", component: Messages },
+  { path: "/new-message", component: NewMessage }
 ]
 
-const router = new VueRouter({routes})
+const router = new VueRouter({routes, mode: 'history'})
 
 new Vue({
   vuetify,

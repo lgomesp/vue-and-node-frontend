@@ -1,7 +1,9 @@
 <template>
   <v-app>
     <v-app-bar app color="primary">
-      <v-btn>Messages</v-btn>
+      <v-btn to="/">Messages</v-btn>
+      <v-spacer />
+      <v-btn to="/new-message">New Message</v-btn>
       <v-spacer />
       <v-btn>Login</v-btn>
     </v-app-bar>
