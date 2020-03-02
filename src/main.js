@@ -7,6 +7,7 @@ import vueRouter from 'vue-router'
 import Messages from './components/Messages'
 import NewMessage from './components/NewMessage'
 import Message from './components/Message'
+import Register from './components/Register'
 import VueRouter from 'vue-router'
 
 Vue.config.productionTip = false
@@ -16,7 +17,8 @@ Vue.use(vueRouter)
 const routes = [
   { path: "/", component: Messages },
   { path: "/new-message", component: NewMessage },
-  { path: "/message/:id", component: Message }
+  { path: "/message/:id", component: Message },
+  { path: "/register", component: Register }
 ]
 
 const router = new VueRouter({routes, mode: 'history'})

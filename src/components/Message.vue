@@ -18,7 +18,7 @@ export default {
     };
   },
   async created() {
-    this.messageBody = await this.$store.dispatch("getMessage", this.$route.params.id);
+    this.messageBody = (await this.$store.dispatch("getMessage", this.$route.params.id)).text;
   }
 };
 </script>

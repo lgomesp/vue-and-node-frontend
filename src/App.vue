@@ -5,6 +5,7 @@
       <v-spacer />
       <v-btn to="/new-message">New Message</v-btn>
       <v-spacer />
+      <v-btn to="/register">Register</v-btn>
       <v-btn>Login</v-btn>
     </v-app-bar>
 
