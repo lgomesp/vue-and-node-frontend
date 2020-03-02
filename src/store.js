@@ -26,6 +26,12 @@ export default new Vuex.Store({
                     message: messageBody
                 })).data;
             commit('newMessage', msg.message);
+        },
+        /* eslint-disable no-unused-vars */
+        async getMessage({commit}, id) {
+            console.log(id);
+            return (await axios.get(`http://localhost:3000/messages/${id}`)).data;
         }
+        /* eslint-enable no-unused-vars */
     }
 })

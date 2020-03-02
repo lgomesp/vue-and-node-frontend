@@ -5,7 +5,7 @@
         <v-toolbar-title>Messages</v-toolbar-title>
       </v-toolbar>
 
-      <v-list-item v-for="(message, index) in $store.state.messages" :key="index" @click="true">
+      <v-list-item v-for="(message, index) in $store.state.messages" :key="index" :to="'message/' + index">
         <v-list-item-content>
           <v-list-item-title>{{ message }}</v-list-item-title>
         </v-list-item-content>
