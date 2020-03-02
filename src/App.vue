@@ -5,8 +5,10 @@
       <v-spacer />
       <v-btn to="/new-message">New Message</v-btn>
       <v-spacer />
-      <v-btn to="/register">Register</v-btn>
-      <v-btn>Login</v-btn>
+
+      <v-btn to="/register" v-if="!$store.state.token">Register</v-btn>
+      <v-btn v-if="!$store.state.token">Login</v-btn>
+
     </v-app-bar>
 
     <v-content>
@@ -19,5 +21,9 @@
 <script>
 export default {
   name: "App",
+  data() {
+    return {
+    }
+  }
 };
 </script>

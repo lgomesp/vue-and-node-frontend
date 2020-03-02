@@ -6,7 +6,8 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({ 
     state: {
-        messages: ['msg1', 'msg2']
+        messages: ['msg1', 'msg2'],
+        token: localStorage.getItem('token') || ''
     },
     mutations: {
         updateMessages(state, messages) {
@@ -14,6 +15,9 @@ export default new Vuex.Store({
         },
         newMessage(state, message) {
             state.messages.push(message);
+        },
+        auth(state, token) {
+            state.token = token;
         }
     },
     actions: { //perform assync actions
@@ -36,6 +40,7 @@ export default new Vuex.Store({
             let token = (await axios.post("http://localhost:3000/register", registerData)).data;
             localStorage.setItem("token", token);
             axios.defaults.headers.common['Authorization'] = token;
+            commit('auth', token);
         },
         /* eslint-enable no-unused-vars */
     }
